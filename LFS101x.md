@@ -65,10 +65,10 @@ To switch between VTs, press **CTRL-ALT-function key** for the VT. For example, 
 
 Linux distributions can start and stop the graphical desktop in various ways. The exact method differs from distributions and among distributions versions. For the newer systemd-based distributions, the display manager is run as service, you can stop the GUI desktop with systemctl utility and most distributions will also work with the telinit command, as in:
 
-`$ sudo systemctl stop gdm` or `sudo telinit 3)`
+`$ sudo systemctl stop gdm` or `sudo telinit 3`
 
 and restart it (after logging into the console) with:
 
-`$ sudo systemctl start gdm` or `sudo telinit 5)`
+`$ sudo systemctl start gdm` or `sudo telinit 5`
 
 On Ubuntu version befor 18.04 LTS, substitute lightdm for gdm
