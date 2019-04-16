@@ -250,13 +250,12 @@ This could prove useful if you are working in multiple roles and want to be alwa
 When commands are executed, by default there are three standard file streams (or descriptors) always open for use: standard input (standard in or stdin), standard output (standard out or stdout) and standard error (or stderr).
 
 |		Name 		|	Symbolic name 	|		Value 		|		Example 		|
-|-----------------------------------------------------------------------------------|
+| ----------------- | ----------------- | ----------------- | ----------------------|
 |	standad input 	|	stdin			| 0					| keyboard				|
-|-----------------------------------------------------------------------------------|
+| ----------------- | ----------------- | ----------------- | ----------------------|
 |	standard output |	stdout 			| 1 				| terminal 				|
-|-----------------------------------------------------------------------------------|
+| ----------------- | ----------------- | ----------------- | ----------------------|
 |	standard error 	|	stderr 			| 2 				| log file 				|
-|-----------------------------------------------------------------------------------|
 
 Usually, stdin is your keyboard, and stdout and stderr are printed on your terminal. stderr is often redirected to ann error logging file, while stdin is supplied by directing input to come from a file or from the output of a previous command through a pipe. stdout is also often redirected into a file. Since stderr is where error messages are written, usually nothing will go there.
 
@@ -393,3 +392,27 @@ Note the size here is in 512-byte blocks, by default; you can also specify bytes
 For example, to find files greater than 10MB in size and running a command on those files:
 
 `$ find / -size +10MB -exec command {} \;`
+
+## Package Management Systems on Linux
+
+The core parts of a Linux distribution and most of its add-on software are installed via the Package Management System. Each package contains the files and other instructions needed to make one software component work well and cooperate with the other components that comprise the entire system. Packages can depend on each other. For example, a package for a web-based application written on PHP can depend on the PHP package.
+
+There are two broad families of package manager: those based on Debian and those which use RPM as their low-level package manager. The two system are incompatible, but broadly speaking, provide the same features and satisfy the same needs. There are some other systems used by more speacialized Linux distributions.
+
+## Package Manager: Two levels
+
+Both package management systems operate on two distinct levels: a low-level tool (such as dpkg or rpm) takes care of the details of unpacking individual packages, running scripts, getting the software installed correctly, while a high-level tool (such as apt-get, yum, dnf or zypper) works with groups of packages, downloads packages from a vendorm and figures out dependencies.
+
+Most of times users need to work with only high-level tool, which will take care of calling the low-level tool as needed. Dependency resolution is a particularly important feature of the high-level tool, as it handles the details of finding and installing each dependency for you. Be careful, however, as installing a single package could result in many dozens or even hundreds of dependent packages being installed.
+
+## Working With Different Package Management Systems
+
+**The Advantage Packaging Tool (apt)** is the underlying package management system that manages software on Debian-based systems. While it forms the backend for graphical package managers, such as Ubuntu Software Center and synaptic, its native user interface is at the command line, with programs that include apt-get and aph-cache.
+
+**Yellowdog Updater Modified (yum)** is na open source command-line package-management utility for RPM-compatible Linux systems that belongs to the Red Hat/Fedora family. **yum** has both command line and graphical user interfaces. Recent Fedora versions have replaced **yum** with a new utility called **dnf**, which has less historical baggage, has nice new capabilities and is mostly backwards-compatible with **yum** for day-to-day commands.
+
+**zypper** is the package management system for the SUSE/openSUSE family and is also based on RPM. **zypper** also allows you to manage repositories from the command line. **zypper** is fairly straightforward to use and resembles **yum** quite closely.
+
+*Basic packaging commands*:
+
+
