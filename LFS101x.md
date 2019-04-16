@@ -249,10 +249,10 @@ This could prove useful if you are working in multiple roles and want to be alwa
 
 When commands are executed, by default there are three standard file streams (or descriptors) always open for use: standard input (standard in or stdin), standard output (standard out or stdout) and standard error (or stderr).
 
-|		Name 		|	Symbolic name 	|		Value 		|		Example 		|
+|	**Name** 		|**Symbolic name** 	|	**Value** 		|	**Example** 		|
 | ----------------- | ----------------- | ----------------- | ----------------------|
 |	standad input 	|	stdin			| 0					| keyboard				|
-|	standard output |	stdout 			| 1 				| terminal 				|
+|	standard output |	stdout 			| 1 				| terminal 				|	
 |	standard error 	|	stderr 			| 2 				| log file 				|
 
 Usually, stdin is your keyboard, and stdout and stderr are printed on your terminal. stderr is often redirected to ann error logging file, while stdin is supplied by directing input to come from a file or from the output of a previous command through a pipe. stdout is also often redirected into a file. Since stderr is where error messages are written, usually nothing will go there.
@@ -371,7 +371,7 @@ The **{}** (squiggly brackets) is a placeholder that will be filled with all the
 
 One can also use the **-ok** options, which behaves the same as **-exec**, expect that **find** will prompt you for permissions before executing the command. This makes it a good way to test your results before blindly executing any potentially dangerous commands.
 
-##Finding Files Based on Time and Size
+## Finding Files Based on Time and Size
 
 It is sometimes the case that you wish to find files according to attributes, such as when they were created, last used etc., or based on their size. It is easy to perform such searches.
 
@@ -413,4 +413,17 @@ Most of times users need to work with only high-level tool, which will take care
 
 *Basic packaging commands*:
 
-
+|**Operation**					  |**RPM**						|**deb**				      |	
+|---------------------------------------------------------------------------------------------|
+| Install package				  | 		rpm -i foo.rpm 			| dpkg --install foo.deb  |
+| Install package, dependencies	  | 		yum install foo 		| apt-get install foo 	  |
+| Remove package 				  | 		rmp -e foo.rpm 			| dpkg --remove foo.deb   |
+| Remove package, dependencies	  | 		yum remove foo 			| apt-get autoremove foo  |
+| Update package 				  | 		rpm -U foo.rpm 			| dpkg --install foo.deb  |
+| Update package, dependencies	  | 		yum update foo 			| apt-get install foo.deb |
+| Update entire system 			  | 		yum update 				| apt-get dist-upgrade 	  |
+| Show all installed packages 	  | rpm -qa or yum list installed   | dpkg --list 			  |
+| Get information on package 	  | 		rpm -qil foo 			| dpkg --listfiles foo 	  |
+| Show package named *foo* 		  |		yum list "foo" 			    | apt-cache search foo 	  |
+| Show all available packages 	  |  		yum list 				| apt-cache dumpavail foo |
+| What package is *file* part of? | 		rpm -qf file 			| dpkg --search file 	  |
