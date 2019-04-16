@@ -413,8 +413,8 @@ Most of times users need to work with only high-level tool, which will take care
 
 *Basic packaging commands*:
 
-|**Operation**					  |**RPM**						|**deb**				      |	
-|---------------------------------------------------------------------------------------------|
+|**Operation**					  |**RPM**							|**deb**				  |	
+| ------------------------------- | ------------------------------- | ----------------------- |
 | Install package				  | 		rpm -i foo.rpm 			| dpkg --install foo.deb  |
 | Install package, dependencies	  | 		yum install foo 		| apt-get install foo 	  |
 | Remove package 				  | 		rmp -e foo.rpm 			| dpkg --remove foo.deb   |
