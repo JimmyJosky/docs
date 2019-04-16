@@ -427,3 +427,52 @@ Most of times users need to work with only high-level tool, which will take care
 | Show package named *foo* 		  |		yum list "foo" 			    | apt-cache search foo 	  |
 | Show all available packages 	  |  		yum list 				| apt-cache dumpavail foo |
 | What package is *file* part of? | 		rpm -qf file 			| dpkg --search file 	  |
+
+## Linux Documentation Source
+
+Whether you are inexperienced user or a veteran, you will not always know (or remember) the proper use of various Linux programs and utilities: what is the command to type, what options does it take, etc. You will need to consult help documentation regularly. Because Linux-based systems draw from a large variety of sources, there are numerous reservoirs of documentation and ways of getting help. Distributors consolidate this material and present it in a comprehensive and easy-to-use manner.
+
+Important Linux documentation sources include:
+
+	- The man pages (short for manual pages)
+	- GNU info
+	- The help command and --help option
+	- Other documentation sources
+
+## The man pages
+
+The man pages are the most often-used source of Linux documentation. They provide in-depth documentation about many programs and utilities, as well as other topics, including configuration files, and programming APIs for system calls, library routines, and the kernel. They are present on all Linux distributionsand are always at your fingertips.
+
+The man pages infrastructure was first introduced in the early UNIX verisons, at the beginning of 1970s. The name man is just abbreviation for manual. 
+
+Typing man with a topic name as an argument retrieves the information stored in the topic's man pages.
+
+## man
+
+The man program searches, formats, and displays the information contained in the man page system. Because many topic have copious amount of relevant information, output is piped through a pager program (such as less) to be viewed on page at a time. At the same time, the information is formatted for a good visual display.
+
+A given topic may have multiple pages associated with it and there is a default order determining which one is displayed when no options or section number is specified. To list all pages on the topic, use **-f** option. To list all pages that discuss a specified topic (even if the specified subject is not present in the name), use **-k** option.
+
+**man -f** generates the same result as typing **whatis**
+
+**man -k** genetrates the same result as typing **apropos**
+
+The default order is specified in **/etc/man_db.conf** and is roughly (but not exactly) in ascending numerical order by section.
+
+## manual chapters
+
+The man pages are divided into chapters numbered 1 through 9. In some cases, a letter is appended to the chapter number to identify a specific topic. For example, many pages describing part of the X Window API are in chapter **3X**. 
+
+The chapter namber can be used to force man to display the page from a particular chapter. It is common to have multiple pages across multiple chapters with the same name, especially for names of library functions or system calls.
+
+With the **-a** parameter, man will display all pages with the given name in all chapters, one after the other, as in:
+
+`$ man -a socket`
+
+## The GNU Info System
+
+The next source of Linux documentation is the GNU Info System.
+
+This is GNU project's standard documentation format, which it prefers as an alternative to man. The Info System is basically free-form, and supports linked subsections.
+
+Functionally, info resembles man in many ways. However, topics are connected using links (even though its design predates The World Wide Web). Information can be viewed through either a command line interface, a graphical help utility, printed or viewed online.
