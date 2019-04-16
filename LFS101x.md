@@ -252,9 +252,7 @@ When commands are executed, by default there are three standard file streams (or
 |		Name 		|	Symbolic name 	|		Value 		|		Example 		|
 | ----------------- | ----------------- | ----------------- | ----------------------|
 |	standad input 	|	stdin			| 0					| keyboard				|
-| ----------------- | ----------------- | ----------------- | ----------------------|
 |	standard output |	stdout 			| 1 				| terminal 				|
-| ----------------- | ----------------- | ----------------- | ----------------------|
 |	standard error 	|	stderr 			| 2 				| log file 				|
 
 Usually, stdin is your keyboard, and stdout and stderr are printed on your terminal. stderr is often redirected to ann error logging file, while stdin is supplied by directing input to come from a file or from the output of a previous command through a pipe. stdout is also often redirected into a file. Since stderr is where error messages are written, usually nothing will go there.
