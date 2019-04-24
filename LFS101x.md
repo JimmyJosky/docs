@@ -476,3 +476,51 @@ The next source of Linux documentation is the GNU Info System.
 This is GNU project's standard documentation format, which it prefers as an alternative to man. The Info System is basically free-form, and supports linked subsections.
 
 Functionally, info resembles man in many ways. However, topics are connected using links (even though its design predates The World Wide Web). Information can be viewed through either a command line interface, a graphical help utility, printed or viewed online.
+
+## Using info from the Command Line
+
+Typing **info** with no arguments in a terminal window displays an index of available topics. You can browse through the topic list using the regular movement keys: **arrows, Page Up, and Page Down.**
+
+You can view help for a particular topic by typing **info <topic name>**. The  system then searches for the topic in all available **info** files.
+
+Some useful keys are: **q** to quit, **h** for help, and **Enter** to select a menu item
+
+## Info Page Structure
+
+The topic which you view in an info pages is called a node. The table list the basic keystroke for moving between nodes.
+
+Node are essentially sections and subsections in the documentation. You can move between nodes or view each node sequentially. Each node may contain menus and linked subjects, or items.
+
+Items function line browser links and are identified by an asterisk (\*) at the beginning of the item name. Named items (outside a menu) are identified with double-colons (::) at the end of the item name. Items can refer to other nodes within the file or to other files.
+
+| Key 	|			Function 			|
+|=======|===============================|
+| n 	| Go to the next node 			|
+|=======|===============================|
+| p 	| Go the previous node 			|
+|=======|===============================|
+| u 	| Move one node up in the index |
+
+## The --help Option
+
+Another important source of Linux documentation is use of the **--help** option.
+
+Most commands have an avaiable short description which can be viewed using the **--help** or the **-h** option along with the command or application. For example, to lear more about the **man** command, you can run the following command:
+
+`$ man --help`
+
+The **--help** option is useful as a quick reference and it displays informantion faster than man or info pages.
+
+## The help Command
+
+When run within a bash command shell, some popular commands (such as **echo** and **cd**) actually run especially built into bash verions of the commands rather than the usual binaries found of the system, say under **/bin** or **/usr/bin**. Its is more efficient to do so as execution is faster because fewer resources are used. One shoult note that there can be some (usually small) differences in the two verisons of the command.
+
+To view a synopsis of these built-in commands, you can simply type help as shown in the screenshot.
+
+For these built-in commands, **help** performs the same basic function as the **-h** and **--help** arguments perform standalone programs.
+
+## Package Documentation
+
+Linux documentation is also available as part of the package management system. Usually, this documentation is directly pulled from the upstream source code, but it can also contain information about how the distribution packaged and set up the software.
+
+Such information is placed under the **/usr/share/doc** directory, grouped in subdirectories named after each package, perhaps including the version number in the name.
